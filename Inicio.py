@@ -8,12 +8,11 @@ from nltk.stem import SnowballStemmer
 st.title("🔍 Demo TF-IDF en Español")
 
 # Documentos de ejemplo
-default_docs = """El perro ladra fuerte en el parque.
-El gato maúlla suavemente durante la noche.
-El perro y el gato juegan juntos en el jardín.
-Los niños corren y se divierten en el parque.
-La música suena muy alta en la fiesta.
-Los pájaros cantan hermosas melodías al amanecer."""
+default_docs = """Messi es el goat.
+Cristiano es el segundon.
+Neymar es el principe que no quiso ser rey.
+mbappe le gustan las espadas.
+Colombia va a ganar el mundial 2026."""
 
 # Stemmer en español
 stemmer = SnowballStemmer("spanish")
@@ -34,30 +33,30 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     text_input = st.text_area("📝 Documentos (uno por línea):", default_docs, height=150)
-    question = st.text_input("❓ Escribe tu pregunta:", "¿Dónde juegan el perro y el gato?")
+    question = st.text_input("❓ Escribe tu pregunta:", "¿De que deporta esta hablando el texto?")
 
 with col2:
     st.markdown("### 💡 Preguntas sugeridas:")
     
     # NUEVAS preguntas optimizadas para mayor similitud
-    if st.button("¿Dónde juegan el perro y el gato?", use_container_width=True):
-        st.session_state.question = "¿Dónde juegan el perro y el gato?"
+    if st.button("¿Quien es el goat", use_container_width=True):
+        st.session_state.question = "¿Quien es el goat?"
         st.rerun()
     
-    if st.button("¿Qué hacen los niños en el parque?", use_container_width=True):
-        st.session_state.question = "¿Qué hacen los niños en el parque?"
+    if st.button("¿Quien es el segundòn?", use_container_width=True):
+        st.session_state.question = "¿Quien es el segundòn?"
         st.rerun()
         
-    if st.button("¿Cuándo cantan los pájaros?", use_container_width=True):
-        st.session_state.question = "¿Cuándo cantan los pájaros?"
+    if st.button("¿Neymar no quiso ser que?", use_container_width=True):
+        st.session_state.question = "¿Neymar no quiso ser que?"
         st.rerun()
         
-    if st.button("¿Dónde suena la música alta?", use_container_width=True):
-        st.session_state.question = "¿Dónde suena la música alta?"
+    if st.button("¿Que le gusta a mbappe?", use_container_width=True):
+        st.session_state.question = "¿Que le gusta a mbappe?"
         st.rerun()
         
-    if st.button("¿Qué animal maúlla durante la noche?", use_container_width=True):
-        st.session_state.question = "¿Qué animal maúlla durante la noche?"
+    if st.button("¿Que seleccion va a ganar el mundial?", use_container_width=True):
+        st.session_state.question = "¿Que seleccion va a ganar el mundial?"
         st.rerun()
 
 # Actualizar pregunta si se seleccionó una sugerida
